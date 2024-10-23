@@ -22,7 +22,7 @@ I am thrilled to share my first-ever project: a Chat Application powered by a ch
 - Fetch API
 
 ## 🌐 Live Demo
-You can view the live version of the chat application here: [Chat Application Live on Vercel](https://your-vercel-link-here)
+You can view the live version of the chat application here: [Chat Application Live on Vercel](https://my-ai-chatbot1-neon.vercel.app/)
 
 ## 💡 Future Plans
 I am excited to continue developing my skills and working on more projects like this one. I plan to explore advanced features for this chatbot, such as:
