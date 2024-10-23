@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    width: 100%;
+    height: 100vh;
+}
+.chat-container{
+    width: 100%;
+    height: 80vh;
+    background-color:rgba(9, 10, 10, 0.573);
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 18px;
+    overflow: auto;
+}
+
+.user-chatbox{
+width: 60%;
+position: relative;
+left: 40%;
+
+}
+.user-chatarea{
+    width: 90%;
+    padding: 20px;
+    background-color: black;
+    color: #ccc;
+    border-radius: 40px 0px 40px 40px;
+    filter: drop-shadow(1px 1px 5px #e0cfcf);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    }
+#userimg{
+    position: absolute;
+    right: 0;
+    margin-left: 10px;
+}    
+.ai-chatbox{
+width: 60%;
+position: relative;
+
+
+}
+.chooseimg{
+    width: 40%;
+    border-radius: 30px;
+    
+}
+.ai-chatarea{
+    width: 90%;
+    padding: 20px;
+    background-color: rgba(44, 39, 39, 0.573);
+    position: relative;
+    left: 10%;
+    border-radius: 0px 40px 40px 40px;
+    filter: drop-shadow(1px 1px 5px #e1e1e1);
+    color: #ccc;
+    }    
+#aiimg{
+position: absolute;
+left: 0;
+margin-right: 10px;
+}
+
+
+.prompt-area{
+    width: 100%;
+    height: 20vh;
+    background-color: rgba(9, 10, 10, 0.573);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+#prompt:focus{
+    border: 1px solid #ccc;
+    filter: drop-shadow(1px 1px 5px #ccc);
+}
+.prompt-area textarea {
+    width: 50%;
+    height: 70px;
+    background-color: black;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    overflow: hidden;  /* Prevent scrollbar from appearing */
+    resize: none;      /* Disable resizing */
+    white-space: nowrap; /* Prevent wrapping to the next line */
+}
+
+.prompt-area button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    border: none;
+    filter: drop-shadow(2px 2px 10px #ccc);
+    cursor: pointer;
+    transition:   background-color 0.5s ease-in-out;
+}
+.prompt-area button:hover{
+    background-color: rgba(0,0,0,0.338);
+}
+/* From Uiverse.io by LeonKohli */ 
+.loader {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .bubble {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #1312129e, #15141429);
+    margin: 0px 5px 0px 5px;
+    animation: bubbleAnimation 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes bubbleAnimation {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(2);
+      opacity: 0.5;
+    }
+  }
+  
+.choose{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+#imgbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#theme{
+    width: 10%;
+    border: none;
+    background: #ccc;
+    padding: 5px 5px;
+    border-radius: 50px;
+
+}
+.theme-text{
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+
+}
+/* Default theme (light) */
+body.light {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+/* Dark theme */
+body.dark {
+    background-color: #342d2dcf;
+    color: #ffffff;
+}
+
+.chat-container.light {
+    background-color: #ffffff;
+}
+
+.chat-container.dark {
+    background-color: rgba(9, 10, 10, 0.573);
+}
+
+.prompt-area.light {
+    background-color: #e0e0e0;
+}
+
+.prompt-area.dark {
+    background-color: rgba(9, 10, 10, 0.573);
+}
+
+/* For dark theme */
+body.dark .user-chatarea {
+    background-color: #4a4a4a; /* Light background for user chat */
+    color: white; /* Light text */
+}
+
+body.dark .ai-chatarea {
+    background-color: #4a4a4a; /* Light background for AI chat */
+    color: white; /* Light text */
+}
+body.dark .theme-text{
+    color: #ffffff;
+}
+body.dark #aiimg,#userimg{
+    filter: drop-shadow(2px 2px 8px #ccc);
+}
+body.dark .prompt-area textarea{
+background-color: #ccc;
+color: #000;
+}
+body.light .user-chatarea, body.light .ai-chatarea {
+    background-color: black; /* Default dark background for light theme */
+    color: #ccc; /* Light grey text */
+}
+
+
+@media (max-width:768px){
+    .user-chatbox{
+        width: 80%;
+        left: 20%;
+    }
+    .ai-chatbox{
+        width: 80%;
+
+    }
+    #theme{
+        width: 30%;
+    }
+ 
+    
+}
+@media (max-width:480px){
+    .prompt-area textarea,
+    input,
+    button{
+        width: 45%;
+        height: 55px;
+    }
+    ::placeholder{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 300px) {
+    .chat-container {
+        padding: 5px;
+        font-size: 16px; /* Smaller font size */
+    }
+
+    .user-chatbox,
+    .ai-chatbox {
+        padding: 3px 5px;
+        width: 100%; /* Full width for better readability */
+        left: 0; /* Align to the left for narrow screens */
+    }
+
+    .prompt-area {
+        align-items: stretch; /* Full width of elements */
+        gap: 5px; /* Smaller gap */
+    }
+
+    .prompt-area textarea {
+        width: 70%; /* Full width for input */
+        height: 50px; /* Adjust height */
+        font-size: 16px;
+        padding: 10px; /* Smaller padding */
+    }
+
+::placeholder{
+    padding: 10px 0px;
+  
+}
+
+    #theme {
+        width: 50%; /* Wider dropdown for easier selection */
+    }
+
+    .theme-selector {
+        justify-content: center;
+        margin-bottom: 10px; /* Spacing from chat container */
+    }
+
+    ::placeholder {
+        font-size: 12px; /* Smaller placeholder text */
+    }
+
+    .chooseimg {
+        width: 100%; /* Ensure uploaded image fits the screen */
+        max-height: 200px; /* Limit image height */
+        object-fit: cover;
+    }
+}
+
+@media (max-width:200px){
+    .prompt-area{
+        flex-wrap: wrap;
+    }
+    .prompt-area textarea{
+        width: 95%;
+    }
+}

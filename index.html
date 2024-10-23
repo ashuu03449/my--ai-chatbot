@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> <!-- Link to Animate.css for animations -->
+</head>
+<body>
+    <!-- Theme Selector -->
+    
+    <!-- Chat Area -->
+    <div class="chat-container">
+        <div class="theme-selector">
+            <label for="theme" class="theme-text">Choose Theme: </label> <!-- Label for theme selection -->
+            <select id="theme" name="theme"> <!-- Dropdown for theme options -->
+                <option value="light">Light</option> <!-- Light theme option -->
+                <option value="dark">Dark</option> <!-- Dark theme option -->
+            </select>
+        </div>
+    
+        <!-- Chatboxes will be dynamically added here -->
+    </div>
+
+    <!-- Prompt Area -->
+    <div class="prompt-area">
+        <textarea id="prompt" rows="3" placeholder="Message Chatbot"></textarea> <!-- Textarea for user input -->
+        <button id="imgbtn"><img src="./img.svg" alt=""> <!-- Button to upload images -->
+            <input type="file" accept="images/*" hidden> <!-- Hidden file input for images -->
+        </button>
+        <button id="submit"><img src="./submit.svg" alt=""></button> <!-- Button to submit the message -->
+    </div>
+
+    <script src="./script.js"></script> <!-- Link to external JavaScript -->
+</body>
+</html>
